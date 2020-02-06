@@ -35,10 +35,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-inverse-custom">
       <div class="container">
-        <a class="navbar-brand mr-auto" href="#">
-          <span>Meteor</span>
-        </a>
-
+        <div class="navbar-brand mr-auto"></div>
         <div class="hidden-md-up">
           <a class="navbar-toggler collapsed" data-toggle="collapse" href="#collapsingNavbar" aria-expanded="false" aria-controls="collapsingNavbar">
             <div class="sr-only">Skoč na obsah</div>
@@ -48,13 +45,16 @@
         <div id="collapsingNavbar" class="collapse navbar-toggleable-custom">
           <ul class="nav navbar-nav navbar-nav-transparent float-right">
             <li class="nav-item nav-item-toggable">
-              <a class="nav-link" href="/#ako-to-funguje">Ako to funguje?</a>
+              <a class="nav-link" href="/#ako-to-funguje">Ako to funguje</a>
             </li>
             <li class="nav-item nav-item-toggable">
-              <a class="nav-link" href="/#statistiky">Štatistiky</a>
+              <a class="nav-link" href="/#statistiky">Čo sa dozviem</a>
             </li>
             <li class="nav-item nav-item-toggable">
-              <a class="nav-link" href="/#ako-sledovat-statistiky">Ako sledovať štatistiky?</a>
+              <a class="nav-link" href="/#vlastnosti">Vlastnosti</a>
+            </li>
+            <li class="nav-item nav-item-toggable">
+              <a class="nav-link" href="/#ako-sledovat-statistiky">Ako sledovať</a>
             </li>
           </ul>
         </div>
@@ -82,7 +82,7 @@
     <section id="ako-to-funguje" class="section-intro bg-light text-center">
       <div class="container">
         <h3 class="wp wp-1">Ako to funguje?</h3>
-        <p class="lead wp wp-2">Základom nášho riešenia je Meteor – jediný senzor, ktorý prináša aj amatérskym futbalistom detailné individuálne štatistiky. Nosí sa na lýtku a počas zápasu nepretržite zaznamenáva detailné údaje o pohybe hráčov. Pomocou umelej inteligencie dokáže identifikovať všetko, čo sa v zápase udialo: pohyb po ihrisku, prihrávku, strelu či dribling. Neurónová sieť následnevyhodnotí tvoj výkon na základe 12 kritérií.</p>
+        <p class="lead wp wp-2">Základom nášho riešenia je Meteor – jediný senzor, ktorý prináša aj amatérskym futbalistom detailné herné a pohybové štatistiky. Nosí sa na lýtku a počas zápasu nepretržite zaznamenáva detailné údaje o pohybe hráčov. Pomocou umelej inteligencie dokáže identifikovať všetko, čo sa v zápase udialo: pohyb po ihrisku, prihrávku, strelu či dribling. Neurónová sieť následne vyhodnotí tvoj výkon na základe 12 kritérií.</p>
         <img src="assets/img/meteor.png" alt="Meteor" class="img-fluid wp wp-3 mb-5">
       </div>
     </section>
@@ -99,7 +99,7 @@
               <div class="card-body">
                 <span class="icon-futbol-solid display-4 text-primary"></span>
                 <h4 class="card-title">Individuálne štatistiky</h4>
-                <p class="card-text">Nabehané kilometre, odohrané minúty, tvrdosť strely, držanie lopty, aktivita v zápase…</p>
+                <p class="card-text">Prehľad o tvojej rýchlosti, vytrvalosti a technických štatistikách. Porovnaj sa s ktorýmkoľvek spoluhráčom.</p>
               </div>
             </div>
           </div>
@@ -108,7 +108,7 @@
               <div class="card-body">
                 <span class="icon-users-solid display-4 text-primary"></span>
                 <h4 class="card-title">Tímové štatistiky</h4>
-                <p class="card-text">Ak Meteor používajú oba tímy, dokážeme spracovať aj porovnanie výkonu tímov.</p>
+                <p class="card-text">Ak Meteor používajú v zápase oba tímy, získate aj porovnanie tímovej výkonnosti.</p>
               </div>
             </div>
           </div>
@@ -116,8 +116,8 @@
             <div class="card mb-0">
               <div class="card-body">
                 <span class="icon-gamepad-solid display-4 text-primary"></span>
-                <h4 class="card-title">Leaderboard</h4>
-                <p class="card-text">Tvoj výkon prepočítame na výkonnostný rating a vytvoríme dlhodobý rebríček ako vo FIFA alebo PES.</p>
+                <h4 class="card-title">Dlhodobý rating</h4>
+                <p class="card-text">Tvoje výkony v zápasoch prepočítame na výkonnostný rating ako vo FIFA a PES a tvoríme aj dlhodobý rebríček. Čím lepšie hráš, tým vyššie stúpaš.</p>
               </div>
             </div>
           </div>
@@ -137,7 +137,7 @@
               <div class="card-body">
                 <span class="icon-umbrella-solid display-4 text-primary"></span>
                 <h4 class="card-title">V akomkoľvek počasí</h4>
-                <p class="card-text">Meteor je odolný voči dažďu aj horúčave, žiadne výhovorky!</p>
+                <p class="card-text">Meteor je odolný voči dažďu, mrazu aj horúčave, žiadne výhovorky!</p>
               </div>
             </div>
           </div>
@@ -146,7 +146,7 @@
               <div class="card-body">
                 <span class="icon-running-solid display-4 text-primary"></span>
                 <h4 class="card-title">Sadne každému</h4>
-                <p class="card-text">Páska so senzorom sa dá nasadiť na lýtko aj cez štucne, termoprádlo alebo ortézu.</p>
+                <p class="card-text">Elastická páska so senzorom sa dá nasadiť na lýtko aj cez štucne, termoprádlo alebo ortézu.</p>
               </div>
             </div>
           </div>
@@ -159,21 +159,61 @@
     <!-- Text Content
     ================================================== -->
 
+    <section id="vlastnosti" class="section-text bg-dark">
+      <div class="container">
+
+        <div class="row py-5 justify-content-between">
+          <div class="col-md-5">
+            <h3 class="text-center">Zápasové štatistiky</h3>
+            <p class="wp wp-7">Po každom zápase, ktorý odohráš s Meteorom, ti vypočítame:</p>
+            <ul>
+              <li>odohrané minúty</li>
+              <li>počet krátkych a dlhých prihrávok</li>
+              <li>najsilnejšiu strelu</li>
+              <li>akceleráciu v porovnaní Kylianom Mbappem</li>
+              <li>rýchlosť a počet šprintov</li>
+              <li>nabehanú vzdialenosť, rozdelenú na chôdzu, beh a šprint</li>
+              <li>aktívny čas v zápase</li>
+              <li>počet zrýchlení</li>
+            </ul>
+          </div>
+          <div class="col-md-5 align-self-end separator-x">
+            <h3 class="text-center">Zápasové štatistiky</h3>
+            <p class="wp wp-7">Tvoj profil a výkonnostný rating aktualizujeme po každom zápase a zohľadňujeme 12 parametrov:</p>
+            <ul>
+              <li>počet prihrávok</li>
+              <li>počet striel</li>
+              <li>počet vkĺzačiek</li>
+              <li>počet driblingov</li>
+              <li>rýchlosť počas driblingu</li>
+              <li>najvyššiu rýchlosť streľby</li>
+              <li>priemernú rýchlosť streľby</li>
+              <li>nabehanú vzdialenosť</li>
+              <li>rýchlosť šprintov</li>
+              <li>počet šprintov</li>
+              <li>akceleráciu</li>
+              <li>aktivitu</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <section id="ako-sledovat-statistiky" class="section-text bg-light">
       <div class="container">
-        <h3 class="text-center">Ako sledovať štatistiky?</h3>
+        <h3 class="text-center">Ako sledovať štatistiky</h3>
         <div class="row py-5 justify-content-between">
           <div class="col-md-5">
             <p class="wp wp-7">Na začiatku sezóny priradíme každému hráčovi jeho Meteor číslo. Pred zápasom si od manažéra ihriska vezmeš senzor so svojím číslom a odohráš zápas. Meteor po zápase vrátiš a na druhý deň sú tvoje štatistiky pripravené online.</p>
           </div>
           <div class="col-md-5 align-self-end separator-x">
             <p class="wp wp-8"></p>
-            <img src="assets/img/statistiky.png" alt="iPad mock" class="img-fluid wp wp-8">
+            <img src="assets/img/screenshot.png" alt="štatistiky - meteor" class="img-fluid wp wp-8">
           </div>
         </div>
       </div>
     </section>
-
 
 
     <!-- Sign Up
@@ -181,12 +221,8 @@
 
     <section class="section-signup">
       <div class="container">
-        <h3 class="text-center mb-5">Ozvi sa nám a maj štatistiky ako najväčší profesionáli!</h3>
+        <h3 class="text-center mb-5">Chceš vedieť viac?<br>Ozvi sa nám a získaj štatitiky ako najväčší profesionáli!</h3>
         <p class="lead text-center">hello@footstat.sk – +421 902 931 208</p>
-        <p class="display-4 text-center">
-            <a href="#"><span class="icon-facebook-square-brands"></span><span class="sr-only">Link na Facebook</span></a>
-            <a href="#"><span class="icon-instagram-brands"></span><span class="sr-only">Link na Instagram</span></a>
-        </p>
       </div>
     </section>
 
@@ -198,19 +234,27 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6 col-lg-5">
-            <div class="media flex-column flex-md-row">
+            <div class="media flex-column flex-md-row mt-4">
               <span class="d-flex align-self-center align-self-md-start mr-3">Meteor</span>
               <small class="media-body text-center text-md-left">
-                &copy; Nejaká s.r.o. 2020. <br>
-                Omáčka alebo tak niečo.
+                &copy; 2020 Crossroads Marketing s.r.o.
               </small>
             </div>
           </div>
           <div class="col-md-6">
             <ul class="nav flex-column flex-md-row justify-content-md-end">
-              <li class="nav-item"><a class="nav-link" href="/#ako-to-funguje">Ako to funguje?</a></li>
-              <li class="nav-item"><a class="nav-link" href="/#statistiky">Štatistiky</a></li>
-              <li class="nav-item"><a class="nav-link" href="/#ako-sledovat-statistiky">Ako sledovať štatistiky?</a></li>
+              <li class="nav-item">
+              <a class="nav-link" href="/#ako-to-funguje">Ako to funguje</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#statistiky">Čo sa dozviem</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#vlastnosti">Vlastnosti</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#ako-sledovat-statistiky">Ako sledovať</a>
+            </li>
             </ul>
           </div>
         </div>
