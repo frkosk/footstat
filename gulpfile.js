@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var connect = require('gulp-connect');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
@@ -13,31 +14,29 @@ var notify = require("gulp-notify");
 gulp.task('serve', (cb) => {
   browserSync.init({
     server: {
-      baseDir: "./",
+      baseDir: "./public/",
       index: "index.html",
       logSnippet: false
     }
   });
 
-  gulp.watch('./assets/**/*.scss', gulp.series('sass'));
-  gulp.watch('./assets/js/scripts.js', gulp.series('js'));
-  gulp.watch('./*.html').on('change', browserSync.reload);
+  gulp.watch('./public/assets/**/*.scss', gulp.series('sass'));
+  gulp.watch('./public/assets/js/scripts.js', gulp.series('js'));
+  gulp.watch('./public/*.html').on('change', browserSync.reload);
   cb()
 });
 
+// Gulp task to create a web server
 gulp.task('serveprod', (cb) => {
-  browserSync.init({
-    server: {
-      baseDir: "./",
-      index: "index.html",
-      logSnippet: false
-    }
+  connect.server({
+      root: 'public',
+      livereload: false
   });
-  cb()
+  cb();
 });
 
 gulp.task('sass', (cb) => {
-  gulp.src('./assets/scss/styles.scss')
+  gulp.src('./public/assets/scss/styles.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({ errLogToConsole: false, }))
     .on('error', function(err) {
@@ -56,20 +55,20 @@ gulp.task('sass', (cb) => {
     .pipe(cleanCSS())
     .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./assets/css'))
+    .pipe(gulp.dest('./public/assets/css'))
     .pipe(browserSync.stream());
   cb();
 });
 
 gulp.task('js', (cb) => {
-  gulp.src('./assets/js/scripts.js')
+  gulp.src('./public/assets/js/scripts.js')
     .pipe(sourcemaps.init())
     .pipe(include())
     .on('error', console.log)
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./assets/js/'))
+    .pipe(gulp.dest('./public/assets/js/'))
     .pipe(browserSync.stream());
   cb()
 });
