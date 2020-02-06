@@ -25,6 +25,20 @@ gulp.task('serve', (cb) => {
   cb()
 });
 
+gulp.task('serveprod', (cb) => {
+  browserSync.init({
+    server: {
+      baseDir: "./",
+      index: "index.html",
+      logSnippet: false
+    }
+  });
+
+  gulp.watch('./assets/**/*.scss', gulp.series('sass'));
+  gulp.watch('./assets/js/scripts.js', gulp.series('js'));
+  cb()
+});
+
 gulp.task('sass', (cb) => {
   gulp.src('./assets/scss/styles.scss')
     .pipe(sourcemaps.init())
