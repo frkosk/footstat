@@ -54,6 +54,11 @@
     }, {
       offset: '60%'
     });
+    $('.wp-9').waypoint(function() {
+      $('.wp-9').addClass('animated fadeInUp');
+    }, {
+      offset: '70%'
+    });
   }
 
 
