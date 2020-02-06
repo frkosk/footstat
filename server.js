@@ -1,6 +1,7 @@
-var static = require('node-static');
-    
-var fileServer = new static.Server('./public');
+const static = require('node-static');
+const path = require('path');
+const fileServer = new static.Server(path.join(__dirname, 'public'));
+const PORT = process.env.PORT || 5000
 
 require('http').createServer(function (request, response) {
     request.addListener('end', function () {
@@ -14,4 +15,4 @@ require('http').createServer(function (request, response) {
             }
         });
     }).resume();
-}).listen(8080);
+}).listen(PORT, () => console.log(`Listening on ${ PORT }`));
