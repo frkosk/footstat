@@ -73,4 +73,4 @@ gulp.task('js', (cb) => {
   cb()
 });
 
-gulp.task('default', gulp.series('serve'));
+gulp.task('default', gulp.series('serveprod'));
