@@ -12,7 +12,6 @@ var notify = require("gulp-notify");
 
 gulp.task('serve', (cb) => {
   browserSync.init({
-    port: 3355,
     server: {
       baseDir: "./",
       index: "index.html",
