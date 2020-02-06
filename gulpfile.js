@@ -33,9 +33,6 @@ gulp.task('serveprod', (cb) => {
       logSnippet: false
     }
   });
-
-  gulp.watch('./assets/**/*.scss', gulp.series('sass'));
-  gulp.watch('./assets/js/scripts.js', gulp.series('js'));
   cb()
 });
 
