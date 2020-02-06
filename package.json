@@ -2,17 +2,15 @@
   "name": "footstat-html",
   "version": "1.0.0",
   "description": "",
+  "main": "index.js",
   "scripts": {
-    "postinstall": "gulp serveprod",
-    "dev": "gulp serve"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
   "homepage": "https://github.com/tatygrassini/landio-html#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.7"
-  },
-  "dependencies": {
+    "browser-sync": "^2.26.7",
     "@fortawesome/fontawesome-free": "^5.12.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.0.0",
@@ -24,6 +22,9 @@
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
-    "hoek": "^5.0.4"
+    "hoek": "^5.0.4",
+    "node-static": "^0.7.11"
+  },
+  "dependencies": {
   }
 }
