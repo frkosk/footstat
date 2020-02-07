@@ -5,6 +5,7 @@ const path = require('path');
 const fileDir = path.join(__dirname, 'public');
 const PORT = process.env.PORT || 5000;
 
+/*
 app.use((req, res, next) => {
     if (req.secure) {
         next();
@@ -14,6 +15,7 @@ app.use((req, res, next) => {
         res.end();
     }
 });
+*/
 
 app.use('/', express.static(fileDir));
 
