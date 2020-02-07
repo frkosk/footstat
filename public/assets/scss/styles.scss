@@ -1875,3 +1875,12 @@ $linkedin: #0077b5;
     width: 170px;
   }
 }
+
+
+.display-1 {
+  font-size: $display1-size / 3;
+
+  @include media-breakpoint-up(md) {
+    font-size: $display1-size;
+  }
+}
