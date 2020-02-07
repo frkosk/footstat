@@ -1,18 +1,33 @@
-const static = require('node-static');
+const express = require('express');
+const app = express();
+
 const path = require('path');
-const fileServer = new static.Server(path.join(__dirname, 'public'));
-const PORT = process.env.PORT || 5000
+const fileDir = path.join(__dirname, 'public');
+const PORT = process.env.PORT || 5000;
 
-require('http').createServer(function (request, response) {
-    request.addListener('end', function () {
-        fileServer.serve(request, response, function (err, result) {
-            if (err) { // There was an error serving the file
-                console.error("Error serving " + request.url + " - " + err.message);
+app.use((req, res, next) => {
+    if (req.secure) {
+        next();
+    } else {
+        var secureUrl = "https://" + req.headers.host + req.url; 
+        res.writeHead(301, { "Location":  secureUrl });
+        res.end();
+    }
+});
 
-                // Respond to the client
-                response.writeHead(err.status, err.headers);
-                response.end();
-            }
-        });
-    }).resume();
-}).listen(PORT, () => console.log(`Listening on ${ PORT }`));
+app.use('/', express.static(fileDir));
+
+/* for catching 404 errors */
+app.use((req, res) => {
+    res.status(404).send('404 – Page not found');
+})
+
+/* for cathing all errors,
+this is default error handler provided by express,
+we will use this function to centralize all our errors
+*/
+app.use((err, req, res, next) => {
+    res.status(500).send(`hey!! we caugth the error 👍👍, ${err.stack} `);
+})
+
+app.listen(PORT, () => console.log(`listening on port https://localhost:${PORT}`));
