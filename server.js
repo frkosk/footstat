@@ -7,7 +7,7 @@ const fileDir = path.join(__dirname, 'public');
 const PORT = process.env.PORT || 5000;
 
 // enable ssl redirect
-app.use(sslRedirect());
+app.use(sslRedirect(['production'], 301));
 
 app.use('/', express.static(fileDir));
 
