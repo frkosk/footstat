@@ -6,8 +6,19 @@ const path = require('path');
 const fileDir = path.join(__dirname, 'public');
 const PORT = process.env.PORT || 5000;
 
+const redirectWWW = (req, res, next) => {
+    if (req.headers.host.match(/^www/) !== null ) {
+        res.redirect('https://' + req.headers.host.replace(/^www\./, '') + req.url);
+    } else {
+        next();
+    }
+}
+
 // enable ssl redirect
 app.use(sslRedirect(['production'], 301));
+
+// redirect to non-www
+app.use(redirectWWW);
 
 app.use('/', express.static(fileDir));
 
