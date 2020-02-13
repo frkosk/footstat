@@ -15,10 +15,10 @@ function redirectWWW(req, res, next) {
 }
 
 // enable ssl redirect
-app.use(sslRedirect(['production'], 301));
+app.all(sslRedirect(['production'], 301));
 
 // redirect to non-www
-app.use(redirectWWW);
+app.all(redirectWWW);
 
 app.use('/', express.static(fileDir));
 
