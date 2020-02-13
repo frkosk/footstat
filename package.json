@@ -25,6 +25,7 @@
     "hoek": "^5.0.4"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "heroku-ssl-redirect": "0.0.4"
   }
 }

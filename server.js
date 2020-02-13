@@ -1,3 +1,4 @@
+const sslRedirect = require('heroku-ssl-redirect');
 const express = require('express');
 const app = express();
 
@@ -5,17 +6,8 @@ const path = require('path');
 const fileDir = path.join(__dirname, 'public');
 const PORT = process.env.PORT || 5000;
 
-/*
-app.use((req, res, next) => {
-    if (req.secure) {
-        next();
-    } else {
-        var secureUrl = "https://" + req.headers.host + req.url; 
-        res.writeHead(301, { "Location":  secureUrl });
-        res.end();
-    }
-});
-*/
+// enable ssl redirect
+app.use(sslRedirect());
 
 app.use('/', express.static(fileDir));
 
