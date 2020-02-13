@@ -61,6 +61,13 @@
     });
   }
 
+  function handleNavBg () {
+    $(document).scroll(function () {
+      var $nav = $("#mainNav");
+      $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    });    
+  }
+
 
   function navMobileCollapse() {
     // avoid having both mobile navs opened at the same time
@@ -184,6 +191,7 @@
     //htmlVideo();
     scrollTo();
     //videoModal();
+    handleNavBg();
   }
 
   init();
